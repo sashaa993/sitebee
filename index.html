@@ -1,77 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>пчелы</title>
+    <title>Пчелы</title>
     <link rel="stylesheet" href="pervaya_verstka.css">
 </head>
 <body>
     <header>
         <div class="zagolovok">
-            <h1><a="#">Пчелы.ru</a></h1>
+            <h1><a href="#">Пчелы.ru</a></h1>
             <p>Наш мед - лучший в округе! Покупайте наш мед!</p>
         </div>
-        <!-- Скрытый чекбокс для управления меню -->
-<input type="checkbox" id="burger-toggle" class="burger-checkbox">
-<!-- Кнопка-бургер (три полоски) -->
-<label for="burger-toggle" class="burger">
-    <span></span>
-    <span></span>
-    <span></span>
-</label>
 
-<!-- Само меню -->
-<nav class="navi-mobile">
-    <ul class="navi">
-        <li class="n1">Главная</li>
-        <li class="n">О компании</li>
-        <li class="n">Продукты</li>
-        <li class="n">Информация</li>
-        <li class="n">Как доехать</li>
-    </ul>
-</nav>
-        
+        <!-- Бургер для мобилки -->
+        <input type="checkbox" id="burger-toggle" class="burger-checkbox">
+        <label for="burger-toggle" class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <!-- Меню (на ПК горизонтальное, на мобилке выезжает) -->
+        <nav class="navi-mobile">
+            <ul class="navi">
+                <li class="n1">Главная</li>
+                <li class="n">О компании</li>
+                <li class="n">Продукты</li>
+                <li class="n">Информация</li>
+                <li class="n">Как доехать</li>
+            </ul>
+        </nav>
     </header>
+
     <main>
         <div class="artikles">
             <div class="artikle1">
                 <h2>Сбор меда самостоятельно</h2>
-                <p class="text large">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus massa enim, gravida sed ipsum quis, condimentum feugiat elit. Nulla dictum porta massa et tristique. Integer eget vulputate ex. Quisque vel tristique ligula, nec malesuada magna. In lacinia sapien lorem, id gravida erat mollis non. Maecenas aliquam enim vitae dolor eleifend vehicula. Proin egestas eget sem eu pulvinar. Sed eu faucibus sapien. Suspendisse potenti. Cras eleifend quis diam id fermentum. Curabitur venenatis purus ac viverra suscipit. Curabitur lorem sem, sollicitudin vitae diam quis, viverra placerat odio. Cras tortor eros, finibus non leo a, eleifend tempor massa.</p>
-                <img class="ava" src="ava.jpg">
-                <p class="text large">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus massa enim, gravida sed ipsum quis, condimentum feugiat elit. Nulla dictum porta massa et tristique. Integer eget vulputate ex. Quisque vel tristique ligula, nec malesuada magna. In lacinia sapien lorem, id gravida erat mollis non. Maecenas aliquam enim vitae dolor eleifend vehicula. Proin egestas eget sem eu pulvinar. Sed eu faucibus sapien. Suspendisse potenti. Cras eleifend quis diam id fermentum. Curabitur venenatis purus ac viverra suscipit. Curabitur lorem sem, sollicitudin vitae diam quis, viverra placerat odio. Cras tortor eros, finibus non leo a, eleifend tempor massa.</p>
+                <p class="text large">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus massa enim...</p>
+                <img class="ava" src="ava.jpg" alt="Пасека">
+                <p class="text large">Lorem ipsum dolor sit amet...</p>
             </div>
 
             <div class="artikle2">
                 <h3>Не стоит бояться пчел</h3>
-                <p class="text medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus massa enim, gravida sed ipsum quis, condimentum feugiat elit. Nulla dictum porta massa et tristique. Integer eget vulputate ex. Quisque vel tristique ligula, nec malesuada magna. In lacinia sapien lorem, id gravida erat mollis non. Maecenas aliquam enim vitae dolor eleifend vehicula. Proin egestas eget sem eu pulvinar. Sed eu faucibus sapien. Suspendisse potenti. Cras eleifend quis diam id fermentum. Curabitur venenatis purus ac viverra suscipit. Curabitur lorem sem, sollicitudin vitae diam quis, viverra placerat odio. Cras tortor eros, finibus non leo a, eleifend tempor massa.</p>
-                <p class="text medium">Nunc nec egestas diam. Nunc scelerisque dignissim sollicitudin. Etiam nisi ipsum, aliquam eu sapien id, volutpat pulvinar nulla. Donec ut ipsum at nisi accumsan sodales. Donec sodales nisl tellus, cursus facilisis sapien ultrices non. Nullam gravida quis eros ut convallis. Mauris posuere nunc eu convallis blandit. Sed a lacus dui. Pellentesque egestas, tortor eu gravida pulvinar, nisl arcu rhoncus augue, ut posuere erat tellus non nibh. Quisque suscipit est nec orci porta egestas. Nullam quis nulla urna. Sed in luctus nibh. Nulla nunc tellus, tempor sed fringilla et, vehicula eu justo.</p>
+                <p class="text medium">Lorem ipsum dolor sit amet...</p>
+                <p class="text medium">Nunc nec egestas diam...</p>
             </div>
             
             <div class="artikle3">
                 <h3>Полезные свойства меда</h3>
-                <p class="text small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus massa enim, gravida sed ipsum quis, condimentum feugiat elit. Nulla dictum porta massa et tristique. Integer eget vulputate ex. Quisque vel tristique ligula, nec malesuada magna. In lacinia sapien lorem, id gravida erat mollis non. Maecenas aliquam enim vitae dolor eleifend vehicula. Proin egestas eget sem eu pulvinar. Sed eu faucibus sapien. Suspendisse potenti. Cras eleifend quis diam id fermentum. Curabitur venenatis purus ac viverra suscipit. Curabitur lorem sem, sollicitudin vitae diam quis, viverra placerat odio. Cras tortor eros, finibus non leo a, eleifend tempor massa.</p>
-                <img class="neava" src="ava.jpg">
-                <h3>Полезные свойства меда</h3>
-                <p class="text small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus massa enim, gravida sed ipsum quis, condimentum feugiat elit. Nulla dictum porta massa et tristique. Integer eget vulputate ex. Quisque vel tristique ligula, nec malesuada magna. In lacinia sapien lorem, id gravida erat mollis non. Maecenas aliquam enim vitae dolor eleifend vehicula. Proin egestas eget sem eu pulvinar. Sed eu faucibus sapien. Suspendisse potenti. Cras eleifend quis diam id fermentum. Curabitur venenatis purus ac viverra suscipit. Curabitur lorem sem, sollicitudin vitae diam quis, viverra placerat odio. Cras tortor eros, finibus non leo a, eleifend tempor massa.</p>
+                <p class="text small">Lorem ipsum dolor sit amet...</p>
+                <img class="neava" src="ava.jpg" alt="Мед">
+                <p class="text small">Lorem ipsum dolor sit amet...</p>
             </div>
         </div>
     </main>
 
     <footer>
-            <ul class="ulll">
-                <li>Договор пользования сайтом</li>
-                <li>Правила пользованием сайта</li>
-                <li class="li1">Использование материалов пчелы.net разрешено только со ссылкой на сайт </li>
-                <li class="li2">Задать вопрос создателям и вдохновителям сайта</li>
-            </ul>
-            <div class="neulll">
-                <h2 class="h222">Пчелы - это полезно</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus massa enim, gravida sed ipsum quis, condimentum feugiat elit. Nulla dictum porta massa et tristique. Integer eget vulputate ex. Quisque vel tristique ligula, nec malesuada magna. In lacinia sapien lorem, id gravida erat mollis non. Maecenas aliquam enim vitae dolor eleifend vehicula. Proin egestas eget sem eu pulvinar. Sed eu faucibus sapien. Suspendisse potenti. Cras eleifend quis diam id fermentum. Curabitur venenatis purus ac viverra suscipit. Curabitur lorem sem, sollicitudin vitae diam quis, viverra placerat odio. Cras tortor eros, finibus non leo a, eleifend tempor massa.</p>
-                <hr>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus massa enim, gravida sed ipsum quis, condimentum feugiat elit. Nulla dictum porta massa et tristique. Integer eget vulputate ex. Quisque vel tristique ligula, nec malesuada magna. In lacinia sapien lorem, id gravida erat mollis non. Maecenas aliquam enim vitae dolor eleifend vehicula. Proin egestas eget sem eu pulvinar. Sed eu faucibus sapien. Suspendisse potenti. Cras eleifend quis diam id fermentum. Curabitur venenatis purus ac viverra suscipit. Curabitur lorem sem, sollicitudin vitae diam quis, viverra placerat odio. Cras tortor eros, finibus non leo a, eleifend tempor massa.</p>
-
-            </div>
+        <ul class="ulll">
+            <li>Договор пользования сайтом</li>
+            <li>Правила пользованием сайта</li>
+            <li class="li1">Использование материалов пчелы.net разрешено только со ссылкой на сайт</li>
+            <li class="li2">Задать вопрос создателям и вдохновителям сайта</li>
+        </ul>
+        <div class="neulll">
+            <h2 class="h222">Пчелы - это полезно</h2>
+            <p>Lorem ipsum dolor sit amet...</p>
+            <hr>
+            <p>Lorem ipsum dolor sit amet...</p>
+        </div>
     </footer>
 </body>
 </html>
