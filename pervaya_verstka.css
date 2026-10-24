@@ -115,3 +115,70 @@ hr {
     background-color: #9e9e9e;
     margin: 5px 0;
 }
+/* Глобальное правило для адаптива */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden; /* Запрещаем горизонтальный скролл */
+}
+
+@media (max-width: 800px) {
+    /* 1. Выстраиваем шапку в столбик */
+    .zagolovok {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        line-height: normal;
+    }
+
+    /* 2. Меню в столбик и убираем отступ */
+    .navi {
+        flex-direction: column;
+        padding: 0;
+    }
+    
+    .navi li {
+        text-align: center;
+        border-bottom: 1px solid #a10204; /* Добавим линию между пунктами */
+    }
+
+    .n1 {
+        margin-left: 0; /* Убираем твой отступ, он сломает мобилку */
+    }
+
+    /* 3. Контент (3 колонки) встает друг под друга */
+    .artikles {
+        flex-direction: column;
+        align-items: center; /* Центрируем колонки */
+        padding: 20px; /* Отступы по краям */
+    }
+
+    /* 4. Убираем жесткую ширину у колонок */
+    .artikle1, .artikle2, .artikle3 {
+        width: 100%; /* Теперь они занимают всю ширину экрана */
+    }
+
+    /* 5. Картинки не должны вылезать */
+    .ava, .neava {
+        width: 100%;
+        height: auto;
+    }
+
+    /* 6. Футер тоже в столбик */
+    footer {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .ulll, .neulll {
+        width: 100%; /* Убираем жесткую ширину 300px и 1200px */
+        padding: 0;
+    }
+    
+    .ulll {
+        margin-bottom: 30px; /* Отступ между списком и текстом */
+    }
+}
