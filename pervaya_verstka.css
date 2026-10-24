@@ -123,6 +123,67 @@ hr {
 body {
     overflow-x: hidden; /* Запрещаем горизонтальный скролл */
 }
+/* Прячем чекбокс */
+.burger-checkbox {
+    display: none;
+}
+
+/* Стили для бургера (показываем только на мобилке) */
+.burger {
+    display: none; /* Скрыт на ПК */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 15px 20px;
+    margin-left: auto; /* Прижимаем вправо */
+}
+
+.burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white; /* Белые полоски на красном фоне */
+    transition: 0.3s;
+}
+
+/* Стили для мобильного меню (прячем его по умолчанию) */
+.navi-mobile {
+    display: none; /* Скрыто на ПК */
+    position: absolute;
+    top: 100%; /* Появляется под шапкой */
+    left: 0;
+    width: 100%;
+    background: #c60305;
+    z-index: 100;
+}
+
+.navi-mobile .navi {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+.navi-mobile .navi li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #a10204;
+    margin: 0; /* Убираем твой margin-left у n1 */
+}
+
+/* МАГИЯ: когда чекбокс нажат */
+.burger-checkbox:checked ~ .navi-mobile {
+    display: block;
+}
+
+/* Анимация бургера в крестик */
+.burger-checkbox:checked ~ .burger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.burger-checkbox:checked ~ .burger span:nth-child(2) {
+    opacity: 0;
+}
+.burger-checkbox:checked ~ .burger span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
 
 @media (max-width: 800px) {
     /* 1. Выстраиваем шапку в столбик */
@@ -133,21 +194,18 @@ body {
         line-height: normal;
     }
 
-        /* Меню в одну линию со скроллом */
-    .navi {
-        flex-direction: row;      /* В ряд, а не в столбик */
-        overflow-x: auto;         /* Включаем горизонтальный скролл, если не влезает */
-        padding: 0 10px;          /* Небольшой отступ по краям */
-        white-space: nowrap;      /* Запрещаем перенос текста на новую строку */
+  .burger {
+        display: flex;
     }
     
-    .navi li {
-        padding: 15px 15px;       /* Чуть меньше отступов, чтобы влезло больше кнопок */
-        border-bottom: none;      /* Убираем линию снизу */
+    /* Прячем обычное горизонтальное меню на мобилке */
+    header > nav:not(.navi-mobile) {
+        display: none;
     }
-
-    .n1 {
-        margin-left: 0;           /* Убираем жесткий отступ */
+    
+    /* И прячем старое горизонтальное меню, если оно где-то осталось */
+    .navi:not(.navi-mobile .navi) {
+        display: none;
     }
 
     /* 3. Контент (3 колонки) встает друг под друга */
