@@ -1,112 +1,128 @@
-body{
-    margin:0;
-    padding:0;
-    font-family: Arial, sans-serif;
+/* ================= БАЗА ================= */
+* {
+    box-sizing: border-box;
 }
 
-header{
-    background-color: #eeeeee;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Запрещаем горизонтальный скролл */
 }
-.zagolovok{
+
+header {
+    background-color: #eeeeee;
+    position: relative; /* Важно для позиционирования мобильного меню */
+}
+
+.zagolovok {
     color: #c60305;
     display: flex;
-    justify-content:space-between;
-    margin: 0px;    
-    padding: 0px 80px;
-    line-height: 0px;
+    justify-content: space-between;
     align-items: center;
+    padding: 20px 80px;
 }
 
-.ava{
-    width:600px;
-}
-
-.neava{
-    width:300px;
-}
-
-.navi{
+/* ================= ПК ВЕРСИЯ МЕНЮ ================= */
+.navi {
     display: flex;
-    justify-content: normal;
     list-style: none;
-    background-color:#c60305;
+    background-color: #c60305;
     color: white;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
 }
 
-.navi li{
+.navi li {
     padding: 20px 25px;
-    
-}
-
-.navi li:hover{
-    background-color: #7d0202;
-    transition: 0.3s;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-.n1{
-    margin-left: 80px;
+.navi li:hover {
+    background-color: #7d0202;
 }
 
-.artikles{
-    display:flex;
+.n1 {
+    margin-left: 80px; /* Отступ слева на ПК */
+}
+
+/* ================= БУРГЕР (СКРЫТ НА ПК) ================= */
+.burger-checkbox {
+    display: none;
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 15px 20px;
+    margin-left: auto;
+}
+
+.burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #c60305; /* Красные полоски */
+    transition: 0.3s;
+}
+
+/* Мобильное меню (скрыто на ПК) */
+.navi-mobile {
+    display: block;
+}
+
+/* ================= КОНТЕНТ ================= */
+.artikles {
+    display: flex;
     justify-content: center;
     gap: 20px;
-}
-.artikle1{
-    flex-direction:column;
-    width: 600px;
+    padding: 20px;
 }
 
-.artikle2{
-    flex-direction:column;
-    width:300px;
+.artikle1, .artikle2, .artikle3 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.artikle3   {
-    flex-direction:column;
-    width: 300px;
-}
+.artikle1 { width: 600px; }
+.artikle2 { width: 300px; }
+.artikle3 { width: 300px; }
 
-footer{
-    background-color:#eeeeee;
+.ava { width: 100%; max-width: 600px; height: auto; }
+.neava { width: 100%; max-width: 300px; height: auto; }
+
+/* ================= ФУТЕР ================= */
+footer {
+    background-color: #eeeeee;
     display: flex;
     justify-content: space-between;
-    padding: 0px 40px;
+    padding: 40px;
     color: #9e9e9e;
-
 }
 
-.ulll{
+.ulll {
     list-style: none;
     line-height: 25px;
     width: 300px;
-
+    padding: 0;
 }
 
 .neulll {
     display: flex;
     flex-direction: column;
-    text-align:center;
+    text-align: center;
     width: 1200px;
-    padding:0;
+    padding: 0;
 }
 
-.li1{
-    line-height: normal;
-    margin-bottom: 5px;
-}
-
-.li2{
-    line-height: normal;
-}
-
-.h222{
+.h222 {
     line-height: 15px;
-    margin-bottom:0;
-    color: #757575;    
+    margin-bottom: 0;
+    color: #757575;
 }
 
 hr {
@@ -115,118 +131,88 @@ hr {
     background-color: #9e9e9e;
     margin: 5px 0;
 }
-/* Глобальное правило для адаптива */
-* {
-    box-sizing: border-box;
-}
 
-body {
-    overflow-x: hidden; /* Запрещаем горизонтальный скролл */
-}
-/* Прячем чекбокс */
-.burger-checkbox {
-    display: none;
-}
+.li1, .li2 { line-height: normal; margin-bottom: 5px; }
 
-/* Стили для бургера (показываем только на мобилке) */
-.burger {
-    display: none; /* Скрыт на ПК */
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 15px 20px;
-    margin-left: auto; /* Прижимаем вправо */
-}
 
-.burger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: white; /* Белые полоски на красном фоне */
-    transition: 0.3s;
-}
-
-/* Стили для мобильного меню (прячем его по умолчанию) */
-.navi-mobile {
-    display: none; /* Скрыто на ПК */
-    position: absolute;
-    top: 100%; /* Появляется под шапкой */
-    left: 0;
-    width: 100%;
-    background: #c60305;
-    z-index: 100;
-}
-
-.navi-mobile .navi {
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-}
-
-.navi-mobile .navi li {
-    padding: 15px 20px;
-    border-bottom: 1px solid #a10204;
-    margin: 0; /* Убираем твой margin-left у n1 */
-}
-
-/* МАГИЯ: когда чекбокс нажат */
-.burger-checkbox:checked ~ .navi-mobile {
-    display: block;
-}
-
-/* Анимация бургера в крестик */
-.burger-checkbox:checked ~ .burger span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-.burger-checkbox:checked ~ .burger span:nth-child(2) {
-    opacity: 0;
-}
-.burger-checkbox:checked ~ .burger span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-}
-
+/* ================= МОБИЛЬНАЯ ВЕРСИЯ (АДАПТИВ) ================= */
 @media (max-width: 800px) {
-    /* 1. Выстраиваем шапку в столбик */
+    /* Шапка в столбик */
     .zagolovok {
         flex-direction: column;
         text-align: center;
         padding: 20px;
-        line-height: normal;
     }
 
-  .burger {
+    /* Показываем бургер */
+    .burger {
         display: flex;
+        margin: 0 auto; /* Центрируем бургер */
+        padding-bottom: 20px;
     }
-    
-    /* Прячем обычное горизонтальное меню на мобилке */
-    header > nav:not(.navi-mobile) {
-        display: none;
-    }
-    
-    /* И прячем старое горизонтальное меню, если оно где-то осталось */
-    .navi:not(.navi-mobile .navi) {
+
+    /* Прячем обычное горизонтальное меню */
+    .navi {
         display: none;
     }
 
-    /* 3. Контент (3 колонки) встает друг под друга */
+    /* Мобильное меню (выезжает) */
+    .navi-mobile {
+        display: none; /* Скрыто, пока не нажали */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #c60305;
+        z-index: 100;
+    }
+
+    .navi-mobile .navi {
+        display: flex; /* Включаем флекс для самого списка */
+        flex-direction: column; /* В столбик */
+        padding: 0;
+        margin: 0;
+    }
+
+    .navi-mobile .navi li {
+        padding: 15px 20px;
+        border-bottom: 1px solid #a10204;
+        margin: 0;
+        text-align: center;
+    }
+
+    .n1 {
+        margin-left: 0; /* Убираем жесткий отступ */
+    }
+
+    /* МАГИЯ: чекбокс нажат — меню видно */
+    .burger-checkbox:checked ~ .navi-mobile {
+        display: block;
+    }
+
+    /* Анимация бургера в крестик */
+    .burger-checkbox:checked ~ .burger span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .burger-checkbox:checked ~ .burger span:nth-child(2) {
+        opacity: 0;
+    }
+    .burger-checkbox:checked ~ .burger span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Контент в столбик */
     .artikles {
         flex-direction: column;
-        align-items: center; /* Центрируем колонки */
-        padding: 20px; /* Отступы по краям */
+        align-items: center;
+        padding: 20px;
     }
 
-    /* 4. Убираем жесткую ширину у колонок */
     .artikle1, .artikle2, .artikle3 {
-        width: 100%; /* Теперь они занимают всю ширину экрана */
-    }
-
-    /* 5. Картинки не должны вылезать */
-    .ava, .neava {
         width: 100%;
-        height: auto;
     }
 
-    /* 6. Футер тоже в столбик */
+    /* Футер в столбик */
     footer {
         flex-direction: column;
         padding: 20px;
@@ -234,11 +220,7 @@ body {
     }
 
     .ulll, .neulll {
-        width: 100%; /* Убираем жесткую ширину 300px и 1200px */
-        padding: 0;
-    }
-    
-    .ulll {
-        margin-bottom: 30px; /* Отступ между списком и текстом */
+        width: 100%;
+        margin-bottom: 20px;
     }
 }
