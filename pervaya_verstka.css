@@ -12,7 +12,6 @@ body {
 
 header {
     background-color: #eeeeee;
-    position: relative; /* Важно для позиционирования мобильного меню */
 }
 
 .zagolovok {
@@ -23,7 +22,7 @@ header {
     padding: 20px 80px;
 }
 
-/* ================= ПК ВЕРСИЯ МЕНЮ ================= */
+/* ================= МЕНЮ (ПК) ================= */
 .navi {
     display: flex;
     list-style: none;
@@ -44,34 +43,7 @@ header {
 }
 
 .n1 {
-    margin-left: 80px; /* Отступ слева на ПК */
-}
-
-/* ================= БУРГЕР (СКРЫТ НА ПК) ================= */
-.burger-checkbox {
-    display: none;
-}
-
-.burger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 15px 20px;
-    margin-left: auto;
-}
-
-.burger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: #c60305; /* Красные полоски */
-    transition: 0.3s;
-}
-
-/* Мобильное меню (скрыто на ПК) */
-.navi-mobile {
-    display: block;
+    margin-left: 80px;
 }
 
 /* ================= КОНТЕНТ ================= */
@@ -144,61 +116,21 @@ hr {
         padding: 20px;
     }
 
-    /* Показываем бургер */
-    .burger {
-        display: flex;
-        margin: 0 auto; /* Центрируем бургер */
-        padding-bottom: 20px;
-    }
-
-    /* Прячем обычное горизонтальное меню */
+    /* МАГИЯ МЕНЮ: горизонтальный скролл */
     .navi {
-        display: none;
+        flex-direction: row;       /* В ряд */
+        overflow-x: auto;          /* Включаем свайп, если не влезает */
+        white-space: nowrap;       /* Запрещаем перенос текста */
+        padding: 0 10px;           /* Немного отступа */
     }
 
-    /* Мобильное меню (выезжает) */
-    .navi-mobile {
-        display: none; /* Скрыто, пока не нажали */
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #c60305;
-        z-index: 100;
-    }
-
-    .navi-mobile .navi {
-        display: flex; /* Включаем флекс для самого списка */
-        flex-direction: column; /* В столбик */
-        padding: 0;
-        margin: 0;
-    }
-
-    .navi-mobile .navi li {
-        padding: 15px 20px;
-        border-bottom: 1px solid #a10204;
-        margin: 0;
-        text-align: center;
+    .navi li {
+        padding: 15px;             /* Чуть меньше отступы, чтобы влезло больше */
+        border-bottom: none;
     }
 
     .n1 {
-        margin-left: 0; /* Убираем жесткий отступ */
-    }
-
-    /* МАГИЯ: чекбокс нажат — меню видно */
-    .burger-checkbox:checked ~ .navi-mobile {
-        display: block;
-    }
-
-    /* Анимация бургера в крестик */
-    .burger-checkbox:checked ~ .burger span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    .burger-checkbox:checked ~ .burger span:nth-child(2) {
-        opacity: 0;
-    }
-    .burger-checkbox:checked ~ .burger span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
+        margin-left: 0;            /* Убираем жесткий отступ */
     }
 
     /* Контент в столбик */
